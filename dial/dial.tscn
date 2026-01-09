@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://kx80lt1dmdhi"]
+
+[ext_resource type="Script" uid="uid://vvgunoxe2djd" path="res://dial/dial.gd" id="1_7bhsg"]
+[ext_resource type="Texture2D" uid="uid://bjtaqmx5amv1i" path="res://dial/tick.tres" id="2_lhrv3"]
+
+[sub_resource type="Gradient" id="Gradient_5ik1j"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.78333336, 1)
+colors = PackedColorArray(0.1494745, 0.14947453, 0.1494745, 1, 0.2901961, 0.2901961, 0.2901961, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7bhsg"]
+gradient = SubResource("Gradient_5ik1j")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="Dial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7bhsg")
+tick_texture = ExtResource("2_lhrv3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_7bhsg")
+stretch_mode = 5
